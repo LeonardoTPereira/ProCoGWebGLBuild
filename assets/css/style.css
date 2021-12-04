@@ -16,14 +16,6 @@
 	background: red;
 }
 
-#custom-loader .fill{
-	position: relative;
-	top: -44px;
-	font-size: 35px;
-	text-align: center;
-	font-family: sans-serif, calibri;
-}
-
 /* demo */
 
 * {
