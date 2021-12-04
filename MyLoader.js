@@ -2,13 +2,13 @@ var myGameInstance = null;
 
 function UnityProgress(unityInstance, progress)
 {
-	if(!unityInstance.Module)
+	if(!myGameInstance.Module)
 		return;
-	if(!unityInstance.progress)
+	if(!myGameInstance.progress)
 	{
-		unityInstance.progress = document.getElementById("custom-loader");
-		unityInstance.progress.style.display = "block";
-		unityInstance.container.appendChild(unityInstance.progress);
+		myGameInstance.progress = document.getElementById("custom-loader");
+		myGameInstance.progress.style.display = "block";
+		myGameInstance.container.appendChild(myGameInstance.progress);
 		
 	}
 	
@@ -16,21 +16,21 @@ function UnityProgress(unityInstance, progress)
 	
 	if(progress == 1)
 	{
-		unityInstance.progress.style.display = "none";
+		myGameInstance.progress.style.display = "none";
 	}
 }
 
 function setLoaderProgressTo(value)
 {
-	const fill = unityInstance.progress.getElementsByClassName("fill")[0];
-	const fillText = unityInstance.progress.getElementsByClassName("label")[0];
+	const fill = myGameInstance.progress.getElementsByClassName("fill")[0];
+	const fillText = myGameInstance.progress.getElementsByClassName("label")[0];
 	fill.animate(
 		[
 			{width: fill.style.width},
 			{width: (value*100) + "%"}
 		],
 		{
-			duration: 300.
+			duration: 300,
 			fill: "forwards"
 		}
 	);

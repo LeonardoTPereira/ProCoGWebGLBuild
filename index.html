@@ -20,6 +20,9 @@ https://github.com/sno/unity-webgl-responsive
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>ProCoG</title>
+	<script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "%UNITY_WEBGL_BUILD_URL%", {onProgress: UnityProgress});
+    </script>
   </head>
   <body>
 	<div id ="custom-loader" hidden>
@@ -49,11 +52,11 @@ https://github.com/sno/unity-webgl-responsive
     <script src="MyLoader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/3dffba7814126f3250965ad31e8f5c54.data",
-        frameworkUrl: "Build/bc6620a2eeec33c619c3b222a14ee491.js",
-        codeUrl: "Build/9d67576bfe70bca394a108c9c7e6a586.js",
-        memoryUrl: "Build/34e0523d78b849ad32b79e111c642fed.mem",
-        symbolsUrl: "Build/8ea5f6f2a12a2a8081f79bf92f545f6f.json",
+        dataUrl: "Build/966e994c429f00390624e44abedf0aee.data",
+        frameworkUrl: "Build/45ce3ec64b6b488d1d7900edff4c1798.js",
+        codeUrl: "Build/025a827e35a71485440ce199bcbdc41e.js",
+        memoryUrl: "Build/7bd46864928111e4cbf9fe1c5808f6d7.mem",
+        symbolsUrl: "Build/4275108e4b46dd71629b5cf9021c001d.json",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Leonardo Tórtoro Pereira",
         productName: "ProCoG",
