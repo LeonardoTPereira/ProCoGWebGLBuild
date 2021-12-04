@@ -1,5 +1,43 @@
 var myGameInstance = null;
 
+function UnityProgress(unityInstance, progress)
+{
+	if(!unityInstance.Module)
+		return;
+	if(!unityInstance.progress)
+	{
+		unityInstance.progress = document.getElementById("custom-loader");
+		unityInstance.progress.style.display = "block";
+		unityInstance.container.appendChild(unityInstance.progress);
+		
+	}
+	
+	SetLoaderProgressTo(progress);
+	
+	if(progress == 1)
+	{
+		unityInstance.progress.style.display = "none";
+	}
+}
+
+function setLoaderProgressTo(value)
+{
+	const fill = unityInstance.progress.getElementsByClassName("fill")[0];
+	const fillText = unityInstance.progress.getElementsByClassName("label")[0];
+	fill.animate(
+		[
+			{width: fill.style.width},
+			{width: (value*100) + "%"}
+		],
+		{
+			duration: 300.
+			fill: "forwards"
+		}
+	);
+	
+	fillText.textContent = (value * 100).toFixed() + "%";
+}
+
 function createUnityInstance(canvas, config, onProgress) {
   onProgress = onProgress || function () {};
 
