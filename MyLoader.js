@@ -24,16 +24,15 @@ function setLoaderProgressTo(value)
 {
 	const fill = myGameInstance.progress.getElementsByClassName("fill")[0];
 	const fillText = myGameInstance.progress.getElementsByClassName("label")[0];
-	fill.animate(
-		[
-			{width: fill.style.width},
-			{width: (value*100) + "%"}
-		],
-		{
-			duration: 300,
-			fill: "forwards"
-		}
-	);
+  fill.animate(
+    [
+      { width: (value * 100) + "%" }
+    ],
+    {
+      duration: 300,
+      fill: "forwards"
+    }
+  );
 	
 	fillText.textContent = (value * 100).toFixed() + "%";
 }
